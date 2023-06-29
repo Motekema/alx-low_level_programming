@@ -1,7 +1,3 @@
-/*
- * This program demonstrates the magic of pointers.
- * It modifies the value of a[2] indirectly using pointer arithmetic.
- */
 #include <stdio.h>
 
 int main(void)
@@ -14,8 +10,7 @@ a[2] = 1024;
 p = &n;
 
 /* write your line of code here... */
-
-*(p + 7) = 98;
+*((int *)((char *)p + sizeof(int) * 5)) = 98;
 
 /* ...so that this prints 98\n */
 printf("a[2] = %d\n", a[2]);
