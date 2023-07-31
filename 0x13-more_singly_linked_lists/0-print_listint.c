@@ -6,6 +6,7 @@
  */
 
 size_t print_listint(const listint_t *h);
+
 {
 
 size_t num1 = 0;
@@ -13,9 +14,8 @@ size_t num1 = 0;
 while (h)
 {
 printf("%d\n", h->n);
-num++;
+num1++;
 h = h->next;
 }
 return (num1);
 }
-
