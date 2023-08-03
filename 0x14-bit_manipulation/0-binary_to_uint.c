@@ -1,5 +1,3 @@
-0-binary_to_uint.c
-
 #include "main.h"
 
 /**
