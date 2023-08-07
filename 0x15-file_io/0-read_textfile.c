@@ -19,7 +19,7 @@ cd = open(filename, O_RDONLY);
 if (cd == -1)
 return (0);
 buf = malloc(sizeof(char) * letters);
-t = read(fd, buf, letters);
+t = read(cd, buf, letters);
 w = write(STDOUT_FILENO, buf, t);
 
 free(buf);
