@@ -15,7 +15,7 @@ ssize_t cd;
 ssize_t t;
 ssize_t w;
 
-fd = open(filename, O_RDONLY);
+cd = open(filename, O_RDONLY);
 if (cd == -1)
 return (0);
 buf = malloc(sizeof(char) * letters);
