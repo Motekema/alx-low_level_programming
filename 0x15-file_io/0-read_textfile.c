@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
-* function that reads a text file and prints it to the POSIX STDOUT.
+* File: 0-read_textfile.c
+* Description: A program to read and output the contents of a text file.
 * @filename: text file being read
 * @letters: number of letters to be read
 * Return: w- actual number of bytes read and printed
