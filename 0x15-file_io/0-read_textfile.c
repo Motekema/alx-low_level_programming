@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
-* File: 0-read_textfile.c
-* Description: A program to read and output the contents of a text file.
-* @filename: text file being read
-* @letters: number of letters to be read
-* Return: w- actual number of bytes read and printed
-* when 0 function fails or filename is NULL.
-*/
+ * read_textfile - Read and print the contents of a text file.
+ * @filename: The name of the text file to read.
+ * @letters: The maximum number of letters to read and print.
+ *
+ * Return: The actual number of letters read and printed, or 0 on failure.
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 char *buf;
