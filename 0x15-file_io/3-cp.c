@@ -3,6 +3,14 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+/**
+ * create_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file buffer is storing chars for.
+ *
+ * Return: A pointer to the newly-allocated buffer.
+ */
+
+
 void error_exit(const char *message)
 {
 dprintf(STDERR_FILENO, "%s\n", message);
