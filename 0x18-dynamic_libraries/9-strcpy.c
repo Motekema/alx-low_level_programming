@@ -7,12 +7,12 @@
 * Return: returns the pointer to dest
 */
 
-char *_strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, char *src)
 {
-char *start = dest;
+	int h;
 
-while ((*dest++ = *src++))
-;
-
-return (start);
+	for (h = 0; src[h] != '\0'; h++)
+		dest[h] = src[h];
+	dest[h] = '\0';
+	return (dest);
 }
