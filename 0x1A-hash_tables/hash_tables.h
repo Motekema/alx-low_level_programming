@@ -6,13 +6,13 @@
 #include <string.h>
 
 /**
-*  * struct hash_node_s - Node of a hash table
-*   *
-*    * @key: The key, string
-*     * The key is unique in the HashTable
-*      * @value: The value corresponding to a key
-*       * @next: A pointer to the next node of the List
-*        */
+* struct hash_node_s - Node of  hash table
+*
+* @key: The key, string
+* The key is a unique in the HashTable
+* @value: The value of a corresponding to a key
+* @next: A pointer to the next node of the List
+*/
 typedef struct hash_node_s
 {
 char *key;
@@ -55,7 +55,7 @@ struct shash_node_s *snext;
 
 /**
 * struct shash_table_s - Sorted hash table data of structure
-* 
+*
 * @size: The sizes of the array
 * @array: An array of a size @size
 * Each cell of this array is pointer to the first node of linked list,
