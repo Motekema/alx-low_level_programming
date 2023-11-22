@@ -1,0 +1,26 @@
+# Makefile for school executable
+
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source files
+SRC = main.c school.c
+
+# Output executable
+TARGET = school
+
+# Rule to build the executable
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
+
+# Clean rule
+clean:
+	rm -f $(TARGET)
+
+# .PHONY rule to avoid conflicts with files named clean
+.PHONY: clean
+
+
