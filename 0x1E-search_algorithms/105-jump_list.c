@@ -14,41 +14,30 @@
 */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-size_t step, prev, i;
-listint_t *current;
+	size_t step, step_size;
+	listint_t *node, *jump;
 
-if (list == NULL || size == 0)
-return (NULL);
+	if (list == NULL || size == 0)
+		return (NULL);
 
-step = sqrt(size);
-prev = 0;
-current = list;
+	step = 0;
+	step_size = sqrt(size);
+	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
+	{
+		node = jump;
+		for (step += step_size; jump->index < step; jump = jump->next)
+		{
+			if (jump->index + 1 == size)
+				break;
+		}
+		printf("Value checked at the index [%ld] = [%d]\n", jump->index, jump->n);
+	}
 
-while (current != NULL && current->n < value)
-{
-printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
+	printf("Value found between indexes [%ld] and [%ld]\n",
+			node->index, jump->index);
 
-prev = current->index;
-for (i = 0; i < step && current->next != NULL && current->next->n < value; i++)
-current = current->next;
-
-if (i < step)
-break;  /* Found the right block */
+	for (; node->index < jump->index && node->n < value; node = node->next)
+		printf("Value checked at the index [%ld] = [%d]\n", node->index, node->n);
+	printf("Value checked at the index [%ld] = [%d]\n", node->index, node->n);
+	return (node->n == value ? node : NULL);
 }
-
-printf("Value found between indexes [%lu] and [%lu]\n", prev, current->index);
-
-while (prev < current->index && prev < size)
-{
-printf("Value checked at index [%lu] = [%d]\n", prev, current->n);
-if (current->n == value)
-return (current);
-
-prev++;
-current = current->next;
-}
-
-printf("Value checked at index [%lu] = [%d]\n", prev, current->n);
-return (NULL);
-}
-
