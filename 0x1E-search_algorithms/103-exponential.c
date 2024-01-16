@@ -10,7 +10,7 @@
  * @right: Right index of the search range.
  * @value: Value to search for.
  *
- * Return: Index where value is locat, or -1 if not present or if array is NULL.
+ * Return:Index where value is locat, or -1 if not present or if array is NULL.
  */
 int _binary_search(int *array, size_t left, size_t right, int value)
 {
