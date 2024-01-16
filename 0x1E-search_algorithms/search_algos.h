@@ -6,35 +6,35 @@
 #include <stdlib.h>
 
 /**
- * @n: Integers
- * @index: Index of a node in the list
- * @next: Pointer to a next node
+ * struct listint_s - singly linked list node
+ * @n: integer
+ * @index: index of the node in the list
+ * @next: pointer to the next node
  *
- * Description: singly linked list node structures
+ * Description: singly linked list node structure
  */
 typedef struct listint_s
 {
-		int n;
-		size_t index;
-		struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
 /**
- * struct skiplist_s - Singly link list with an express lane
+ * struct skiplist_s - singly linked list node with an express lane
+ * @n: integer
+ * @index: index of the node in the list
+ * @next: pointer to the next node
+ * @express: pointer to the next node in the express lane
  *
- * @n: Integers
- * @index: Index of a node in the list
- * @next: Pointer to a next node
- * @express: Pointer toa next node in the express lane
- *
- * Description: singly linked list nodes structure with an express lane
+ * Description: singly linked list node structure with an express lane
  */
 typedef struct skiplist_s
 {
-				int n;
-				size_t index;
-				struct skiplist_s *next;
-				struct skiplist_s *express;
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
 } skiplist_t;
 
 int exponential_search(int *array, size_t size, int value);
@@ -46,4 +46,4 @@ int binary_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int value);
 
-#endif
+#endif /* SEARCH_ALGOS_H */
