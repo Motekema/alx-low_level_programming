@@ -12,46 +12,25 @@
 */
 int jump_search(int *array, size_t size, int value)
 {
-size_t step, prev;
+size_t i, jump, step;
 
-if (array == NULL)
-return -1;
+if (array == NULL || size == 0)
+return (-1);
 
 step = sqrt(size);
-prev = 0;
-
-while (array[custom_min(step, size) - 1] < value)
+for (i = jump = 0; jump < size && array[jump] < value;)
 {
-printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
-
-prev = step;
-step += sqrt(size);
-
-if (prev >= size)
-break;
+printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
+i = jump;
+jump += step;
 }
 
-printf("Value found between indexes [%lu] and [%lu]\n", prev - step, prev);
+printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
 
-for (; prev < custom_min(step, size); prev++)
-{
-printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
-if (array[prev] == value)
-return prev;
+jump = jump < size - 1 ? jump : size - 1;
+for (; i < jump && array[i] < value; i++)
+printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+return (array[i] == value ? (int)i : -1);
 }
-
-return -1;
-}
-
-/**
-* custom_min - Returns the minimum of two values
-* @a: First value
-* @b: Second value
-*
-* Return: The minimum of a and b
-*/
-size_t custom_min(size_t a, size_t b)
-{
-return (a < b) ? a : b;
-}
-
